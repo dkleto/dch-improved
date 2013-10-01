@@ -32,7 +32,7 @@ then
             if [[ $line =~ ^.*-[0-9]+$ ]]
             then
                 # Get the number at the end that is preceded by a hyphen
-                bump=$(sed 's/^.*27-\([0-9]\+\)$/\1/' <<< $line)
+                bump=$(sed 's/^.*-\([0-9]\+\)$/\1/' <<< $line)
                 # Increment it
                 incremented=$(($bump + 1))
                 # Replace the old number with the incremented
