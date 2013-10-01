@@ -1,1 +1,2 @@
+# Ignore /debian directory included for ease of testing.
 /debian/
