@@ -27,31 +27,23 @@ then
         then
             # Save the 8 digit number in the variable $version
             datestamp=$(sed 's/^.*\([0-9]\{8\}\).*$/\1/' <<< $line)
-
-            # Get the current date as a datestamp
             currentdate=`date +"%Y%m%d"`
 
-            # If the 8 digit number is less than the current date:
             if [ $datestamp -lt $currentdate ]
             then
-                # Update the version string to the datestamp followed by "-1"
                 version=$(sed "s/$datestamp.*$/$currentdate-1/" <<< $line)
                 dch -v $version
             else
                 # Get the number at the end that is preceded by a hyphen
                 bump=$(sed 's/^.*-\([0-9]\+\)$/\1/' <<< $line)
-                # Increment it
                 incremented=$(($bump + 1))
-                # Replace the old number with the incremented
                 version=$(sed "s/-$bump$/-$incremented/" <<< $line)
                 dch -v $version
             fi
         else
             # Get the number at the end that is preceded by a hyphen
             bump=$(sed 's/^.*-\([0-9]\+\)$/\1/' <<< $line)
-            # Increment it
             incremented=$(($bump + 1))
-            # Replace the old number with the incremented
             version=$(sed "s/-$bump$/-$incremented/" <<< $line)
             dch -v $version
         fi
