@@ -9,7 +9,7 @@ preventing dch from appending your distro name at the end of the version string.
 It was written with the Catalyst AU version number convention in mind 
 (Specifically for moodle sites). 
 
-Usually, this will be: "(<application version>.<datestamp>-<revision>)"
+Usually, this will be: "(&lt;application version&gt;.&lt;datestamp&gt;-&lt;revision&gt;)"
 
 The script will do the following:
     - Check that there is a version string enclosed in parentheses
