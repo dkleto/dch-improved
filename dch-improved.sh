@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ! -f /$(pwd)/debian/changelog ]
+    then
+        echo "There does not appear to be a /debian/changelog file in the current directory."
+        exit
+    fi
+
 # While loop is untidy, there is definitely a better way.
 while read changelog
     do
