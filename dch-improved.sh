@@ -27,10 +27,9 @@ then
         then
             version=$(sed "s/$datestamp.*$/$currentdate-1/" <<< $line)
             dch -v $version
-        else
-            # If there is a number at the end that is preceded by a hyphen
-            if [[ $line =~ ^.*-[0-9]+$ ]]
-            then
+        # If there is a number at the end that is preceded by a hyphen
+        elif [[ $line =~ ^.*-[0-9]+$ ]]
+        then
                 # Get the number at the end that is preceded by a hyphen
                 bump=$(sed 's/^.*-\([0-9]\+\)$/\1/' <<< $line)
                 # Increment it
@@ -38,10 +37,11 @@ then
                 # Replace the old number with the incremented
                 version=$(sed "s/-$bump$/-$incremented/" <<< $line)
                 dch -v $version
-            else
-                dch -i
-            fi
+        else
+            dch -i
         fi
+    else
+        dch -i
     fi
 else 
     dch -i
