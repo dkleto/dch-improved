@@ -5,7 +5,7 @@ while read changelog
     do
         line=$changelog
         break
-    done < ./debian/changelog
+    done < $(pwd)/debian/changelog
 
 # If there is a set of parentheses in the first line:
 if [[ $line =~ \(.*\) ]] 
