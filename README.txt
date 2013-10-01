@@ -17,3 +17,5 @@ The script will do the following:
             end of the string.
     - If there is no revision number (number at the end preceded by a hyphen),
     just call dch -i, and call it a day.
+
+Use at your own risk. I threw this together as a quick hack. It works for me.
