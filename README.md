@@ -12,7 +12,7 @@ It was written with the Catalyst AU version number convention in mind
 Usually, this will be: "(&lt;application version&gt;.&lt;datestamp&gt;-&lt;revision&gt;)"
 
 The script will do the following:
-    - Check that there is a version string enclosed in parentheses
+    - Check that there is a version string enclosed in parentheses<br>
     - If there is a number at the end of string, preceded by a hyphen:
         - Look for an 8 digit datestamp in the string: 
             - If one is found, check it against the current date and update it 
