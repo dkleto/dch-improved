@@ -23,4 +23,5 @@ The script will do the following:<br>
     - If there is no revision number (number at the end preceded by a hyphen),
     just call dch -i, and call it a day.<br><br>
 
-Use at your own risk. I threw this together as a quick hack. It works for me.
+Use at your own risk. I threw this together as a quick hack. This script will not
+magically fix anything and it will not make you breakfast. It works for me.

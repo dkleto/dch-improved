@@ -25,7 +25,7 @@ then
         # If there is an 8 digit number in $line:
         if [[ $line =~ ^.*[0-9]{8}.*$ ]]
         then
-            # Save the 8 digit number in the variable $version
+            # Save the 8 digit number in the variable $datestamp
             datestamp=$(sed 's/^.*\([0-9]\{8\}\).*$/\1/' <<< $line)
             currentdate=`date +"%Y%m%d"`
 
